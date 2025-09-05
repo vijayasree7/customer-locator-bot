@@ -22,7 +22,6 @@ This is a practical example of combining **browser automation**, **data extracti
 
 Workflow:  
 ![Customer Locator Workflow](customer-locator-workflow.png)
-
 Example:  
 ![Customer Locator Log](customer-locator-log.png)
 
