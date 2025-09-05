@@ -39,12 +39,17 @@ Example:
 
 ## 🗂️ Repository Structure
 customer-locator-bot/
-│── README.md
-│── CustomerLocator_Main.json       # Bot definition
-│── data.xlsx                       # Sample Excel file
-│── execution.log                   # Sample log file
-│── customer_locator_workflow.png   # Workflow screenshot
-│── customer_locator_log.png        # Output screenshot
+
+|- README.md
+
+|- CustomerLocator_Main.json       # Bot definition
+
+|- data.xlsx                       # Sample Excel file
+
+|- execution.log                   # Sample log file
+
+|- customer_locator_workflow.png   # Workflow screenshot
+|- customer_locator_log.png        # Output screenshot
 
 ---
 
@@ -52,6 +57,11 @@ customer-locator-bot/
 - **Author:** Vijaya Sree Janjanam  
 - **Created:** 05-Sep-2025  
 - **Bot Type:** Automation Anywhere A360  
+
+---
+
+![Automation Anywhere](https://img.shields.io/badge/Automation%20Anywhere-A360-orange)
+![Bot Type](https://img.shields.io/badge/Customer%20Locator%20Bot-blue)
 
 ---
 
