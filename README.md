@@ -20,11 +20,11 @@ This is a practical example of combining **browser automation**, **data extracti
 
 ## 🖼️ Screenshot
 
-Workflow:
-![Customer Locator Workflow](customer_locator_workflow.png)
+Workflow:  
+![Customer Locator Workflow](customer-locator-workflow.png)
 
 Example:  
-![Customer Locator Log](customer_locator_log.png)
+![Customer Locator Log](customer-locator-log.png)
 
 ---
 
@@ -49,6 +49,7 @@ customer-locator-bot/
 |- execution.log                   # Sample log file
 
 |- customer_locator_workflow.png   # Workflow screenshot
+
 |- customer_locator_log.png        # Output screenshot
 
 ---
