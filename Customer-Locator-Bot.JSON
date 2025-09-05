@@ -1,0 +1,1867 @@
+{
+  "triggers": [],
+  "nodes": [
+    {
+      "uid": "f0048bb5-9781-4a7d-955e-f1d582ff7c96",
+      "commandName": "Comment",
+      "packageName": "Comment",
+      "disabled": false,
+      "attributes": [
+        {
+          "name": "comment",
+          "value": {
+            "type": "STRING",
+            "string": "Title : Bots DNA Customer Locator"
+          }
+        }
+      ]
+    },
+    {
+      "uid": "5c5f8181-d5d8-473d-92cb-c5dcd217ccbf",
+      "commandName": "Comment",
+      "packageName": "Comment",
+      "disabled": false,
+      "attributes": [
+        {
+          "name": "comment",
+          "value": {
+            "type": "STRING",
+            "string": "Description : This bot collects the data from the web page dynamically and generates an excel file"
+          }
+        }
+      ]
+    },
+    {
+      "uid": "c3c47a70-4edc-4cec-bc17-07d84f96530a",
+      "commandName": "Comment",
+      "packageName": "Comment",
+      "disabled": false,
+      "attributes": [
+        {
+          "name": "comment",
+          "value": {
+            "type": "STRING",
+            "string": "Developer : Vijaya Sree Janjanam"
+          }
+        }
+      ]
+    },
+    {
+      "uid": "51828f17-2fee-4bdf-95de-efab1df54787",
+      "commandName": "try",
+      "packageName": "ErrorHandler",
+      "children": [
+        {
+          "uid": "f18836f9-8ec4-4165-a03b-19e88fab9f1b",
+          "commandName": "step",
+          "packageName": "Step",
+          "children": [
+            {
+              "uid": "546a691b-ef5e-4417-bc57-3e419fdc655f",
+              "commandName": "assign",
+              "packageName": "String",
+              "disabled": false,
+              "attributes": [
+                {
+                  "name": "sourceString",
+                  "value": {
+                    "type": "STRING",
+                    "string": "C:\\Users\\DELL\\Desktop\\AA\\CustomerLocator\\CustomerLocator_LogFile.txt"
+                  }
+                }
+              ],
+              "returnTo": {
+                "type": "VARIABLE",
+                "variableName": "strLogPath"
+              }
+            },
+            {
+              "uid": "d5a3ff22-2a5e-43c6-b99c-98b041743235",
+              "commandName": "logToFile",
+              "packageName": "LogToFile",
+              "disabled": false,
+              "attributes": [
+                {
+                  "name": "filePath",
+                  "value": {
+                    "type": "FILE",
+                    "expression": "file://$strLogPath$"
+                  }
+                },
+                {
+                  "name": "logContent",
+                  "value": {
+                    "type": "STRING",
+                    "string": " ************************************************************************************************************************************"
+                  }
+                },
+                {
+                  "name": "appendTimestamp",
+                  "value": {
+                    "type": "BOOLEAN",
+                    "boolean": true
+                  }
+                },
+                {
+                  "name": "logOption",
+                  "value": {
+                    "type": "STRING",
+                    "string": "APPEND_FILE"
+                  }
+                },
+                {
+                  "name": "encodingValue",
+                  "value": {
+                    "type": "STRING",
+                    "string": "ANSI"
+                  }
+                }
+              ]
+            },
+            {
+              "uid": "d1916801-db65-4705-8aef-4e9f3232681c",
+              "commandName": "logToFile",
+              "packageName": "LogToFile",
+              "disabled": false,
+              "attributes": [
+                {
+                  "name": "filePath",
+                  "value": {
+                    "type": "FILE",
+                    "expression": "file://$strLogPath$"
+                  }
+                },
+                {
+                  "name": "logContent",
+                  "value": {
+                    "type": "STRING",
+                    "string": " Bot has started"
+                  }
+                },
+                {
+                  "name": "appendTimestamp",
+                  "value": {
+                    "type": "BOOLEAN",
+                    "boolean": true
+                  }
+                },
+                {
+                  "name": "logOption",
+                  "value": {
+                    "type": "STRING",
+                    "string": "APPEND_FILE"
+                  }
+                },
+                {
+                  "name": "encodingValue",
+                  "value": {
+                    "type": "STRING",
+                    "string": "ANSI"
+                  }
+                }
+              ]
+            }
+          ],
+          "disabled": false,
+          "attributes": [
+            {
+              "name": "title",
+              "value": {
+                "type": "STRING",
+                "string": "1 : Creating Log File to log the Bot execution"
+              }
+            }
+          ]
+        },
+        {
+          "uid": "8dc1f6cb-b5c5-40fa-a5fb-7c86155e4d68",
+          "commandName": "step",
+          "packageName": "Step",
+          "children": [
+            {
+              "uid": "bd33a76b-df46-4ae4-a9dc-8dc1e20558c7",
+              "commandName": "openbrowser",
+              "packageName": "Browser",
+              "disabled": false,
+              "attributes": [
+                {
+                  "name": "openOption",
+                  "value": {
+                    "type": "STRING",
+                    "string": "NEW_WIN"
+                  }
+                },
+                {
+                  "name": "browser",
+                  "value": {
+                    "type": "STRING",
+                    "string": "EDGE"
+                  }
+                },
+                {
+                  "name": "url",
+                  "value": {
+                    "type": "STRING",
+                    "string": "botsdna.com/locator/"
+                  }
+                },
+                {
+                  "name": "timeoutValue",
+                  "value": {
+                    "type": "NUMBER",
+                    "number": "240"
+                  }
+                },
+                {
+                  "name": "version",
+                  "value": {
+                    "type": "NUMBER",
+                    "number": "3810"
+                  }
+                }
+              ]
+            }
+          ],
+          "disabled": false,
+          "attributes": [
+            {
+              "name": "title",
+              "value": {
+                "type": "STRING",
+                "string": "2 : Bot will open the Browser botsdna.com/locator/"
+              }
+            }
+          ]
+        },
+        {
+          "uid": "b6c52253-fbcd-4745-b2ca-33a169e5ce9b",
+          "commandName": "step",
+          "packageName": "Step",
+          "children": [
+            {
+              "uid": "b4c36608-2f91-4c33-b7d0-1677e9d85d50",
+              "commandName": "capture",
+              "packageName": "Recorder",
+              "disabled": false,
+              "attributes": [
+                {
+                  "name": "uiObject",
+                  "value": {
+                    "type": "UIOBJECT",
+                    "uiObject": {
+                      "blob": "eyJvYmpOb2RlIjp7InVuaXF1ZUlEIjoiOTgzZjYzMGEtMGExNC00NjA1LThlYWYtYjVhZDE5YTdmNDUxIiwiaWQiOiIiLCJuYW1lIjoiIiwidmFsdWUiOiIiLCJjbGFzcyI6IiIsInBhcmVudCI6IiIsIndpbmRvd1RpdGxlIjoiIiwicGF0aCI6eyJvYmpQYXRoIjpbeyJpbmRleCI6MX0seyJpbmRleCI6LTV9XX0sInJvbGUiOjE1LCJpbmRleCI6MCwibGVmdCI6NTU0LCJ0b3AiOjM3Nywid2lkdGgiOjgxMCwiaGVpZ2h0IjoxNjI1LCJjbGlja1giOjI0LCJjbGlja1kiOjE0LCJkZXNjcmlwdGlvbiI6IiIsInN0YXRlcyI6IiIsImRlZmF1bHRBY3Rpb24iOiIiLCJ0ZWNobm9sb2d5Ijp7InRlY2hUeXBlIjo2LCJwbGF0Zm9ybVR5cGUiOjEyLCJhcHBsaWNhdGlvblR5cGUiOjgsInByb2Nlc3NJRCI6Im1zZWRnZSIsIndpbkhhbmRsZSI6IiIsIm9jckVuZ2luZSI6bnVsbCwiaXNBZHZhbmNlZENhcHR1cmUiOmZhbHNlLCJpc1NpbHZlcmxpZ2h0VGVjaG5vbG9neSI6ZmFsc2V9LCJhY3Rpb25zIjpudWxsLCJwcm9wZXJ0aWVzIjpbeyJuYW1lIjoiRE9NWFBhdGgiLCJ2YWx1ZSI6Ii9odG1sL2JvZHkvY2VudGVyWzFdL3RhYmxlWzFdIn0seyJuYW1lIjoiQ1NTIFNlbGVjdG9yIiwidmFsdWUiOiJ0YWJsZSN0YmwxIn0seyJuYW1lIjoiSFRNTCBJRCIsInZhbHVlIjoidGJsMSJ9LHsibmFtZSI6IkhUTUwgTmFtZSIsInZhbHVlIjoiIn0seyJuYW1lIjoiSFRNTCBBbHQiLCJ2YWx1ZSI6IiJ9LHsibmFtZSI6IkhUTUwgVGFnIiwidmFsdWUiOiJUQUJMRSJ9LHsibmFtZSI6IkhUTUwgQ2xhc3MiLCJ2YWx1ZSI6Im5nLXNjb3BlIn0seyJuYW1lIjoiSFRNTCBJbm5lclRleHQiLCJ2YWx1ZSI6IkN1c3RvbWVyTmFtZVx0QXVzdHJhbGlhXHRDaGluYVx0SW5kaWFcdFNvdXRoIEtvcmVhXG5GT1JEXHQwXHQyXHQwXHQwXG5JQ0lDSSBQUlVERU5USUFMXHQwXHQwXHQ1XHQwXG5LaW1iZXJseSBDbGFya1x0MFx0MFx0MFx0MVxuTWNEb25hbGRzXHQxXHQwXHQwXHQwXG5Ob3ZhcnRpc1x0MVx0MFx0MFx0MFxuTUFSVVRISSBTVVpVS0lcdDVcdDlcdDRcdDBcbkhZVU5EQUlcdDNcdDFcdDlcdDJcbk5JU1NBTlx0Mlx0M1x0NVx0MFxuTUFISU5EUkFcdDZcdDJcdDBcdDNcblNDT0RBXHQ3XHQ4XHQyXHQ5XG5SRU5BVUxUXHQ4XHQwXHQ0XHQ2XG5CTVdcdDNcdDVcdDBcdDhcblJPTExTIFJPWUNFXHQyXHQ5XHQxXHQ2XG5MQU5EIFJPVkVSXHQ2XHQ4XHQwXHQyXG5CRU5aXHQ3XHQyXHQ2XHQzXG5LSUFcdDlcdDFcdDhcdDBcblVOSU9OIEJBTksgT0YgSU5ESUFcdDBcdDVcdDVcdDhcblNUQVRFIEJBTksgT0YgSU5ESUFcdDFcdDRcdDdcdDBcbkJBTksgT0YgQkFST0RBXHQ1XHQ5XHQzXHQ0XG5CQU5LIE9GIE1BSEFSQVNIVFJBXHQ2XHQ4XHQ1XHQ3XG5DQU5BUkEgQkFOS1x0M1x0NFx0Mlx0NFxuQU5EUkEgUFJBR0hBVEhJIEdSQU1FRU5BIEJBTktcdDdcdDJcdDhcdDZcbkJBTksgT0YgSU5ESUFcdDhcdDZcdDBcdDJcbkNFTlRSQUwgQkFOSyBPRiBJTkRJQVx0OVx0NFx0MVx0NVxuSU5ESUFOIEJBTktcdDVcdDZcdDlcdDBcbklORElBTiBPVkVSU0VBUyBCQU5LXHQwXHQ5XHQyXHQ0XG5QVU5KQUIgTkFUSU9OQUwgQkFOS1x0OFx0N1x0M1x0MlxuUFVOSkFCICYgU0lORCBCQU5LXHQzXHQ4XHQ1XHQwXG5VQ08gQkFOS1x0Mlx0M1x0MVx0NlxuQU5ESFJBIFBSQURFU0ggR1JBTUVFTkEgVklLQVMgQkFOS1x0N1x0Mlx0N1x0NVxuQ0hBSVRBTllBIEdPREFWQVJJIEdSQU1FRU5BIEJBTktcdDRcdDlcdDBcdDFcbkFSVU5BQ0hBTCBQUkFERVNIIFJVUkFMIEJBTktcdDBcdDFcdDdcdDhcbkFSWUFWQVJUIEJBTktcdDNcdDJcdDhcdDJcbkFTU0FNIEdSQU1JTiBWSUtBU0ggQkFOS1x0Nlx0MFx0OVx0OVxuQkFOR0lZQSBHUkFNSU4gVklLQVNIIEJBTktcdDBcdDRcdDVcdDdcbkJBUk9EQSBHVUpBUkFUIEdSQU1JTiBCQU5LXHQyXHQ3XHQyXHQwXG5CQVJPREEgUkFKQVNUSEFOIEtTSEVUUklZQSBHUkFNSU4gQkFOS1x0MVx0M1x0MFx0MVxuQkFST0RBIFVQIEJBTktcdDVcdDRcdDNcdDZcbkNISEFUVElTR0FSSCBSQUpZQSBHUkFNSU4ifSx7Im5hbWUiOiJIVE1MIFNvdXJjZUluZGV4IiwidmFsdWUiOiIwIn0seyJuYW1lIjoiSFRNTCBIcmVmIiwidmFsdWUiOiIifSx7Im5hbWUiOiJIVE1MIFR5cGUiLCJ2YWx1ZSI6IiJ9LHsibmFtZSI6IkhUTUwgVmFsdWUiLCJ2YWx1ZSI6IiJ9LHsibmFtZSI6IkhUTUwgQ2xhc3NJZCIsInZhbHVlIjoiIn0seyJuYW1lIjoiSFRNTCBUaXRsZSIsInZhbHVlIjoiIn0seyJuYW1lIjoiSFRNTCBIZWlnaHQiLCJ2YWx1ZSI6IjE2MjUifSx7Im5hbWUiOiJIVE1MIFdpZHRoIiwidmFsdWUiOiI4MTAifSx7Im5hbWUiOiJIVE1MIFRhZ0luZGV4IiwidmFsdWUiOiIxIn0seyJuYW1lIjoiSFRNTCBUb3AiLCJ2YWx1ZSI6IjIyMSJ9LHsibmFtZSI6IkhUTUwgTGVmdCIsInZhbHVlIjoiNDMzIn0seyJuYW1lIjoiSFRNTCBIYXNGcmFtZSIsInZhbHVlIjoiZmFsc2UifSx7Im5hbWUiOiJIVE1MIEZyYW1lU3JjIiwidmFsdWUiOiJodHRwczovL2JvdHNkbmEuY29tL2xvY2F0b3IvIn0seyJuYW1lIjoiSFRNTCBGcmFtZU5hbWUiLCJ2YWx1ZSI6IiJ9LHsibmFtZSI6IkhUTUwgRnJhbWVQYXRoIiwidmFsdWUiOiIifSx7Im5hbWUiOiJGcmFtZURPTVhQYXRoIiwidmFsdWUiOiIifSx7Im5hbWUiOiJpbm5lckhUTUwiLCJ2YWx1ZSI6IlxuICA8dGJvZHk+PHRyPlxuICAgIDwhLS0gbmdSZXBlYXQ6IChrZXksIHZhbCkgaW4gbXlBcnJheTFbMF0gLS0+PHRoIG5nLXJlcGVhdD1cIihrZXksIHZhbCkgaW4gbXlBcnJheTFbMF1cIiBjbGFzcz1cIm5nLWJpbmRpbmcgbmctc2NvcGVcIj5DdXN0b21lck5hbWU8L3RoPjwhLS0gZW5kIG5nUmVwZWF0OiAoa2V5LCB2YWwpIGluIG15QXJyYXkxWzBdIC0tPjx0aCBuZy1yZXBlYXQ9XCIoa2V5LCB2YWwpIGluIG15QXJyYXkxWzBdXCIgY2xhc3M9XCJuZy1iaW5kaW5nIG5nLXNjb3BlXCI+QXVzdHJhbGlhPC90aD48IS0tIGVuZCBuZ1JlcGVhdDogKGtleSwgdmFsKSBpbiBteUFycmF5MVswXSAtLT48dGggbmctcmVwZWF0PVwiKGtleSwgdmFsKSBpbiBteUFycmF5MVswXVwiIGNsYXNzPVwibmctYmluZGluZyBuZy1zY29wZVwiPkNoaW5hPC90aD48IS0tIGVuZCBuZ1JlcGVhdDogKGtleSwgdmFsKSBpbiBteUFycmF5MVswXSAtLT48dGggbmctcmVwZWF0PVwiKGtleSwgdmFsKSBpbiBteUFycmF5MVswXVwiIGNsYXNzPVwibmctYmluZGluZyBuZy1zY29wZVwiPkluZGlhPC90aD48IS0tIGVuZCBuZ1JlcGVhdDogKGtleSwgdmFsKSBpbiBteUFycmF5MVswXSAtLT48dGggbmctcmVwZWF0PVwiKGtleSwgdmFsKSBpbiBteUFycmF5MVswXVwiIGNsYXNzPVwibmctYmluZGluZyBuZy1zY29wZVwiPlNvdXRoIEtvcmVhPC90aD48IS0tIGVuZCBuZ1JlcGVhdDogKGtleSwgdmFsKSBpbiBteUFycmF5MVswXSAtLT5cbiAgPC90cj5cbiAgPCEtLSBuZ1JlcGVhdDogcm93IGluIG15QXJyYXkxIC0tPjx0ciBuZy1yZXBlYXQ9XCJyb3cgaW4gbXlBcnJheTFcIiBjbGFzcz1cIm5nLXNjb3BlXCI+XG4gICAgPCEtLSBuZ1JlcGVhdDogY29sdW1uIGluIHJvdyAtLT48dGQgbmctcmVwZWF0PVwiY29sdW1uIGluIHJvd1wiIGNsYXNzPVwibmctYmluZGluZyBuZy1zY29wZVwiPlxuICAgICAgRk9SRFxuICAgIDwvdGQ+PCEtLSBlbmQgbmdSZXBlYXQ6IGNvbHVtbiBpbiByb3cgLS0+PHRkIG5nLXJlcGVhdD1cImNvbHVtbiBpbiByb3dcIiBjbGFzIn0seyJuYW1lIjoib3V0ZXJIVE1MIiwidmFsdWUiOiI8dGFibGUgaWQ9XCJ0YmwxXCIgbmctY29udHJvbGxlcj1cIm15Q29udHJvbGxlclwiIGJvcmRlcj1cIjFcIiBzdHlsZT1cIlwiIGNsYXNzPVwibmctc2NvcGVcIj5cbiAgPHRib2R5Pjx0cj5cbiAgICA8IS0tIG5nUmVwZWF0OiAoa2V5LCB2YWwpIGluIG15QXJyYXkxWzBdIC0tPjx0aCBuZy1yZXBlYXQ9XCIoa2V5LCB2YWwpIGluIG15QXJyYXkxWzBdXCIgY2xhc3M9XCJuZy1iaW5kaW5nIG5nLXNjb3BlXCI+Q3VzdG9tZXJOYW1lPC90aD48IS0tIGVuZCBuZ1JlcGVhdDogKGtleSwgdmFsKSBpbiBteUFycmF5MVswXSAtLT48dGggbmctcmVwZWF0PVwiKGtleSwgdmFsKSBpbiBteUFycmF5MVswXVwiIGNsYXNzPVwibmctYmluZGluZyBuZy1zY29wZVwiPkF1c3RyYWxpYTwvdGg+PCEtLSBlbmQgbmdSZXBlYXQ6IChrZXksIHZhbCkgaW4gbXlBcnJheTFbMF0gLS0+PHRoIG5nLXJlcGVhdD1cIihrZXksIHZhbCkgaW4gbXlBcnJheTFbMF1cIiBjbGFzcz1cIm5nLWJpbmRpbmcgbmctc2NvcGVcIj5DaGluYTwvdGg+PCEtLSBlbmQgbmdSZXBlYXQ6IChrZXksIHZhbCkgaW4gbXlBcnJheTFbMF0gLS0+PHRoIG5nLXJlcGVhdD1cIihrZXksIHZhbCkgaW4gbXlBcnJheTFbMF1cIiBjbGFzcz1cIm5nLWJpbmRpbmcgbmctc2NvcGVcIj5JbmRpYTwvdGg+PCEtLSBlbmQgbmdSZXBlYXQ6IChrZXksIHZhbCkgaW4gbXlBcnJheTFbMF0gLS0+PHRoIG5nLXJlcGVhdD1cIihrZXksIHZhbCkgaW4gbXlBcnJheTFbMF1cIiBjbGFzcz1cIm5nLWJpbmRpbmcgbmctc2NvcGVcIj5Tb3V0aCBLb3JlYTwvdGg+PCEtLSBlbmQgbmdSZXBlYXQ6IChrZXksIHZhbCkgaW4gbXlBcnJheTFbMF0gLS0+XG4gIDwvdHI+XG4gIDwhLS0gbmdSZXBlYXQ6IHJvdyBpbiBteUFycmF5MSAtLT48dHIgbmctcmVwZWF0PVwicm93IGluIG15QXJyYXkxXCIgY2xhc3M9XCJuZy1zY29wZVwiPlxuICAgIDwhLS0gbmdSZXBlYXQ6IGNvbHVtbiBpbiByb3cgLS0+PHRkIG5nLXJlcGVhdD1cImNvbHVtbiBpbiByb3dcIiBjbGFzcz1cIm5nLWJpbmRpbmcgbmctc2NvcGVcIj5cbiAgICAgIEYifSx7Im5hbWUiOiJJc1Zpc2libGUiLCJ2YWx1ZSI6InRydWUifV0sImF0dHJpYnV0ZXMiOlt7Im5hbWUiOiJVbmlxdWVJRCIsInZhbHVlIjoiOTgzZjYzMGEtMGExNC00NjA1LThlYWYtYjVhZDE5YTdmNDUxIn0seyJuYW1lIjoiSUQiLCJ2YWx1ZSI6IiJ9LHsibmFtZSI6Ik5hbWUiLCJ2YWx1ZSI6IiJ9LHsibmFtZSI6IlZhbHVlIiwidmFsdWUiOiIifSx7Im5hbWUiOiJDbGFzcyIsInZhbHVlIjoiIn0seyJuYW1lIjoiUGFyZW50IiwidmFsdWUiOiIifSx7Im5hbWUiOiJXaW5kb3dUaXRsZSIsInZhbHVlIjoiIn0seyJuYW1lIjoiUm9sZSIsInZhbHVlIjoiVGFibGUifSx7Im5hbWUiOiJQYXRoIiwidmFsdWUiOiIxfC01In0seyJuYW1lIjoiSW5kZXgiLCJ2YWx1ZSI6IjAifSx7Im5hbWUiOiJMZWZ0IiwidmFsdWUiOiI1NTQifSx7Im5hbWUiOiJUb3AiLCJ2YWx1ZSI6IjM3NyJ9LHsibmFtZSI6IldpZHRoIiwidmFsdWUiOiI4MTAifSx7Im5hbWUiOiJIZWlnaHQiLCJ2YWx1ZSI6IjE2MjUifSx7Im5hbWUiOiJDbGlja1giLCJ2YWx1ZSI6IjI0In0seyJuYW1lIjoiQ2xpY2tZIiwidmFsdWUiOiIxNCJ9LHsibmFtZSI6IkRlc2NyaXB0aW9uIiwidmFsdWUiOiIifSx7Im5hbWUiOiJTdGF0ZXMiLCJ2YWx1ZSI6IiJ9LHsibmFtZSI6IkRlZmF1bHRBY3Rpb24iLCJ2YWx1ZSI6IiJ9XSwiaXNMaW5rZWQiOmZhbHNlfSwib2JqUGFyZW50IjpudWxsLCJvYmpJdGVtIjpudWxsLCJjaGlsZHJlbiI6W10sIml0ZW1zIjpbXSwic2VhcmNoQ3JpdGVyaWEiOls3LDYxLDU4LDgwXSwiZXJyb3IiOm51bGwsImJyb3dzZXJGcmFtZXdvcmsiOiJ1bmRlZmluZWQiLCJjYXB0dXJlVmVyc2lvbiI6NDEwMCwiaXNDZWZXaW5Gb3Jtc0FwcGxpY2F0aW9uIjpmYWxzZSwiYWR2YW5jZVByb3BlcnRpZXMiOnsiYW5jZXN0b3JFbGVtZW50IjoiPGNlbnRlcj48YT48aW1nPjwvYT48aDE+PGk+PC9pPjwvaDE+PGhyPjxmb250PjxhPjwvYT48YT48L2E+PGE+PC9hPjxhPjwvYT48L2ZvbnQ+PGhyPjxicj48dGFibGU+PHRib2R5Pjx0cj48dGg+PC90aD48dGg+PC90aD48dGg+PC90aD48dGg+PC90aD48dGg+PC90aD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjwvdGJvZHk+PC90YWJsZT48dGFibGU+PHRib2R5Pjx0cj48dGg+PC90aD48dGg+PC90aD48dGg+PC90aD48dGg+PC90aD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjwvdGJvZHk+PC90YWJsZT48dGFibGU+PHRib2R5Pjx0cj48dGg+PC90aD48dGg+PC90aD48dGg+PC90aD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjwvdGJvZHk+PC90YWJsZT48dGFibGU+PHRib2R5Pjx0cj48dGg+PC90aD48dGg+PC90aD48dGg+PC90aD48dGg+PC90aD48dGg+PC90aD48dGg+PC90aD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjwvdGJvZHk+PC90YWJsZT48dGFibGU+PHRib2R5Pjx0cj48dGg+PC90aD48dGg+PC90aD48dGg+PC90aD48dGg+PC90aD48dGg+PC90aD48dGg+PC90aD48dGg+PC90aD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjx0cj48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48dGQ+PC90ZD48L3RyPjwvdGJvZHk+PC90YWJsZT48L2NlbnRlcj4iLCJjc3NQYXRoIjoiW10iLCJhZHZhbmNlWHBhdGgiOiJbXCIvL2gxW3RleHQoKT0nIEN1c3RvbWVyIExvY2F0b3LCoCddL2ZvbGxvd2luZy1zaWJsaW5nOjp0YWJsZVwiLFwiLy90YWJsZVtAaWQ9J3RibDEnXVwiLFwidGJsMVwiLFwiLy90YWJsZVtAbmctY29udHJvbGxlcj0nbXlDb250cm9sbGVyJ11cIixcIi8vdGFibGVbQGNsYXNzPSduZy1zY29wZSddXCJdIiwicHJlY2VkaW5nVGV4dCI6IlJFTkFVTFQiLCJhbmNob3JUZXh0IjoiIn19",
+                      "controlType": "TABLE",
+                      "technologyType": "HTML",
+                      "browserType": "EDGE",
+                      "criteria": {
+                        "HTML Tag": {
+                          "enabled": true,
+                          "value": {
+                            "type": "STRING",
+                            "string": "TABLE"
+                          }
+                        },
+                        "UniqueID": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "983f630a-0a14-4605-8eaf-b5ad19a7f451"
+                          }
+                        },
+                        "WindowTitle": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": ""
+                          }
+                        },
+                        "innerHTML": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "\n  <tbody><tr>\n    <!-- ngRepeat: (key, val) in myArray1[0] --><th ng-repeat=\"(key, val) in myArray1[0]\" class=\"ng-binding ng-scope\">CustomerName</th><!-- end ngRepeat: (key, val) in myArray1[0] --><th ng-repeat=\"(key, val) in myArray1[0]\" class=\"ng-binding ng-scope\">Australia</th><!-- end ngRepeat: (key, val) in myArray1[0] --><th ng-repeat=\"(key, val) in myArray1[0]\" class=\"ng-binding ng-scope\">China</th><!-- end ngRepeat: (key, val) in myArray1[0] --><th ng-repeat=\"(key, val) in myArray1[0]\" class=\"ng-binding ng-scope\">India</th><!-- end ngRepeat: (key, val) in myArray1[0] --><th ng-repeat=\"(key, val) in myArray1[0]\" class=\"ng-binding ng-scope\">South Korea</th><!-- end ngRepeat: (key, val) in myArray1[0] -->\n  </tr>\n  <!-- ngRepeat: row in myArray1 --><tr ng-repeat=\"row in myArray1\" class=\"ng-scope\">\n    <!-- ngRepeat: column in row --><td ng-repeat=\"column in row\" class=\"ng-binding ng-scope\">\n      FORD\n    </td><!-- end ngRepeat: column in row --><td ng-repeat=\"column in row\" clas"
+                          }
+                        },
+                        "Left": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "554"
+                          }
+                        },
+                        "Description": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": ""
+                          }
+                        },
+                        "DOMXPath": {
+                          "enabled": true,
+                          "value": {
+                            "type": "STRING",
+                            "string": "//*[@style=\"\"]"
+                          }
+                        },
+                        "HTML Top": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "221"
+                          }
+                        },
+                        "HTML Left": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "433"
+                          }
+                        },
+                        "Parent": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": ""
+                          }
+                        },
+                        "ClickY": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "14"
+                          }
+                        },
+                        "HTML ID": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "tbl1"
+                          }
+                        },
+                        "ClickX": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "24"
+                          }
+                        },
+                        "Index": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "0"
+                          }
+                        },
+                        "outerHTML": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "<table id=\"tbl1\" ng-controller=\"myController\" border=\"1\" style=\"\" class=\"ng-scope\">\n  <tbody><tr>\n    <!-- ngRepeat: (key, val) in myArray1[0] --><th ng-repeat=\"(key, val) in myArray1[0]\" class=\"ng-binding ng-scope\">CustomerName</th><!-- end ngRepeat: (key, val) in myArray1[0] --><th ng-repeat=\"(key, val) in myArray1[0]\" class=\"ng-binding ng-scope\">Australia</th><!-- end ngRepeat: (key, val) in myArray1[0] --><th ng-repeat=\"(key, val) in myArray1[0]\" class=\"ng-binding ng-scope\">China</th><!-- end ngRepeat: (key, val) in myArray1[0] --><th ng-repeat=\"(key, val) in myArray1[0]\" class=\"ng-binding ng-scope\">India</th><!-- end ngRepeat: (key, val) in myArray1[0] --><th ng-repeat=\"(key, val) in myArray1[0]\" class=\"ng-binding ng-scope\">South Korea</th><!-- end ngRepeat: (key, val) in myArray1[0] -->\n  </tr>\n  <!-- ngRepeat: row in myArray1 --><tr ng-repeat=\"row in myArray1\" class=\"ng-scope\">\n    <!-- ngRepeat: column in row --><td ng-repeat=\"column in row\" class=\"ng-binding ng-scope\">\n      F"
+                          }
+                        },
+                        "HTML Class": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "ng-scope"
+                          }
+                        },
+                        "HTML FrameName": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": ""
+                          }
+                        },
+                        "HTML HasFrame": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "false"
+                          }
+                        },
+                        "Name": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": ""
+                          }
+                        },
+                        "States": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": ""
+                          }
+                        },
+                        "HTML Type": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": ""
+                          }
+                        },
+                        "HTML FramePath": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": ""
+                          }
+                        },
+                        "FrameDOMXPath": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": ""
+                          }
+                        },
+                        "HTML InnerText": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "CustomerName\tAustralia\tChina\tIndia\tSouth Korea\nFORD\t0\t2\t0\t0\nICICI PRUDENTIAL\t0\t0\t5\t0\nKimberly Clark\t0\t0\t0\t1\nMcDonalds\t1\t0\t0\t0\nNovartis\t1\t0\t0\t0\nMARUTHI SUZUKI\t5\t9\t4\t0\nHYUNDAI\t3\t1\t9\t2\nNISSAN\t2\t3\t5\t0\nMAHINDRA\t6\t2\t0\t3\nSCODA\t7\t8\t2\t9\nRENAULT\t8\t0\t4\t6\nBMW\t3\t5\t0\t8\nROLLS ROYCE\t2\t9\t1\t6\nLAND ROVER\t6\t8\t0\t2\nBENZ\t7\t2\t6\t3\nKIA\t9\t1\t8\t0\nUNION BANK OF INDIA\t0\t5\t5\t8\nSTATE BANK OF INDIA\t1\t4\t7\t0\nBANK OF BARODA\t5\t9\t3\t4\nBANK OF MAHARASHTRA\t6\t8\t5\t7\nCANARA BANK\t3\t4\t2\t4\nANDRA PRAGHATHI GRAMEENA BANK\t7\t2\t8\t6\nBANK OF INDIA\t8\t6\t0\t2\nCENTRAL BANK OF INDIA\t9\t4\t1\t5\nINDIAN BANK\t5\t6\t9\t0\nINDIAN OVERSEAS BANK\t0\t9\t2\t4\nPUNJAB NATIONAL BANK\t8\t7\t3\t2\nPUNJAB & SIND BANK\t3\t8\t5\t0\nUCO BANK\t2\t3\t1\t6\nANDHRA PRADESH GRAMEENA VIKAS BANK\t7\t2\t7\t5\nCHAITANYA GODAVARI GRAMEENA BANK\t4\t9\t0\t1\nARUNACHAL PRADESH RURAL BANK\t0\t1\t7\t8\nARYAVART BANK\t3\t2\t8\t2\nASSAM GRAMIN VIKASH BANK\t6\t0\t9\t9\nBANGIYA GRAMIN VIKASH BANK\t0\t4\t5\t7\nBARODA GUJARAT GRAMIN BANK\t2\t7\t2\t0\nBARODA RAJASTHAN KSHETRIYA GRAMIN BANK\t1\t3\t0\t1\nBARODA UP BANK\t5\t4\t3\t6\nCHHATTISGARH RAJYA GRAMIN"
+                          }
+                        },
+                        "HTML Alt": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": ""
+                          }
+                        },
+                        "HTML Href": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": ""
+                          }
+                        },
+                        "HTML SourceIndex": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "0"
+                          }
+                        },
+                        "ItemName": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": ""
+                          }
+                        },
+                        "Height": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "1625"
+                          }
+                        },
+                        "ID": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": ""
+                          }
+                        },
+                        "Width": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "810"
+                          }
+                        },
+                        "HTML Title": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": ""
+                          }
+                        },
+                        "Path": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "1|-5"
+                          }
+                        },
+                        "HTML Height": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "1625"
+                          }
+                        },
+                        "HTML Value": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": ""
+                          }
+                        },
+                        "HTML TagIndex": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "1"
+                          }
+                        },
+                        "Role": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "Table"
+                          }
+                        },
+                        "Top": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "377"
+                          }
+                        },
+                        "DefaultAction": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": ""
+                          }
+                        },
+                        "ItemValue": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": ""
+                          }
+                        },
+                        "HTML ClassId": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": ""
+                          }
+                        },
+                        "HTML Width": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "810"
+                          }
+                        },
+                        "Value": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": ""
+                          }
+                        },
+                        "HTML Name": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": ""
+                          }
+                        },
+                        "Class": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": ""
+                          }
+                        },
+                        "HTML FrameSrc": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "https://botsdna.com/locator/"
+                          }
+                        },
+                        "IsVisible": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "true"
+                          }
+                        },
+                        "CSS Selector": {
+                          "enabled": false,
+                          "value": {
+                            "type": "STRING",
+                            "string": "table#tbl1"
+                          }
+                        }
+                      },
+                      "isElevated": false,
+                      "capture": {
+                        "thumbnailMetadataPath": "eba32387-1f5c-4aa2-ac71-55262d394eea.png",
+                        "screenshotMetadataPath": "1030b40e-c137-4a6e-a349-ac0823ea4afd.png",
+                        "screenshotRectangle": {
+                          "x": 443,
+                          "y": 302,
+                          "width": 648,
+                          "height": 1038
+                        },
+                        "thumbnailRectangle": {
+                          "x": 0,
+                          "y": 0,
+                          "width": 80,
+                          "height": 128
+                        },
+                        "securelyRecorded": false
+                      }
+                    },
+                    "uiObjectWindow": {
+                      "type": "WINDOW",
+                      "expression": "$CustomerLocatorBrowser$"
+                    }
+                  }
+                },
+                {
+                  "name": "tableAction",
+                  "value": {
+                    "type": "STRING",
+                    "string": "EXTRACTTOCSV"
+                  }
+                },
+                {
+                  "name": "runInBackground",
+                  "value": {
+                    "type": "BOOLEAN",
+                    "boolean": false
+                  }
+                },
+                {
+                  "name": "advancedWait",
+                  "value": {
+                    "type": "STRING",
+                    "string": "BASIC"
+                  }
+                },
+                {
+                  "name": "wait",
+                  "value": {
+                    "type": "NUMBER",
+                    "number": "15"
+                  }
+                }
+              ],
+              "returnTo": {
+                "type": "VARIABLE",
+                "variableName": "tbleCapturedData"
+              }
+            },
+            {
+              "uid": "37df6608-de39-4eea-9a68-444074e12baf",
+              "commandName": "getNumberOfColumns",
+              "packageName": "DataTable",
+              "disabled": false,
+              "attributes": [
+                {
+                  "name": "table",
+                  "value": {
+                    "type": "VARIABLE",
+                    "variableName": "tbleCapturedData"
+                  }
+                },
+                {
+                  "name": "columnCountSelection",
+                  "value": {
+                    "type": "STRING",
+                    "string": "totalColumnSelection"
+                  }
+                }
+              ],
+              "returnTo": {
+                "type": "VARIABLE",
+                "variableName": "numTotalColumns"
+              }
+            }
+          ],
+          "disabled": false,
+          "attributes": [
+            {
+              "name": "title",
+              "value": {
+                "type": "STRING",
+                "string": "3 : Bot will read the entire data from the browser"
+              }
+            }
+          ]
+        },
+        {
+          "uid": "4bde784e-7867-4b6d-88e7-bfaee1c18172",
+          "commandName": "step",
+          "packageName": "Step",
+          "children": [
+            {
+              "uid": "24ed4db6-668e-42a7-a722-af6736c7b42c",
+              "commandName": "if",
+              "packageName": "If",
+              "children": [
+                {
+                  "uid": "659fa46c-6583-451d-831f-b70bbec71467",
+                  "commandName": "deleteFiles",
+                  "packageName": "File",
+                  "disabled": false,
+                  "attributes": [
+                    {
+                      "name": "filePath",
+                      "value": {
+                        "type": "FILE",
+                        "string": "file:///C:/Users/DELL/Desktop/AA/CustomerLocator/Data.xlsx"
+                      }
+                    },
+                    {
+                      "name": "isParallelDelete",
+                      "value": {
+                        "type": "BOOLEAN",
+                        "boolean": false
+                      }
+                    },
+                    {
+                      "name": "isSize",
+                      "value": {
+                        "type": "BOOLEAN",
+                        "boolean": false
+                      }
+                    },
+                    {
+                      "name": "isDate",
+                      "value": {
+                        "type": "BOOLEAN",
+                        "boolean": false
+                      }
+                    }
+                  ]
+                }
+              ],
+              "branches": [],
+              "disabled": false,
+              "attributes": [
+                {
+                  "attributes": [
+                    {
+                      "name": "sourceFilePath",
+                      "value": {
+                        "type": "FILE",
+                        "string": "file:///C:/Users/DELL/Desktop/AA/CustomerLocator/Data.xlsx"
+                      }
+                    },
+                    {
+                      "name": "waitTimeout",
+                      "value": {
+                        "type": "NUMBER",
+                        "number": "0"
+                      }
+                    }
+                  ],
+                  "name": "condition",
+                  "value": {
+                    "type": "CONDITIONAL",
+                    "conditionalName": "fileExists",
+                    "packageName": "File"
+                  }
+                }
+              ]
+            },
+            {
+              "uid": "8d02ea97-9734-47df-83e1-1d775e3e5f01",
+              "commandName": "CreateSpreadsheet",
+              "packageName": "Excel_MS",
+              "disabled": false,
+              "attributes": [
+                {
+                  "name": "filePath",
+                  "value": {
+                    "type": "FILE",
+                    "string": "file:///C:/Users/DELL/Desktop/AA/CustomerLocator/Data.xlsx"
+                  }
+                },
+                {
+                  "name": "sheetName",
+                  "value": {
+                    "type": "STRING",
+                    "string": ""
+                  }
+                }
+              ],
+              "returnTo": {
+                "type": "SESSION",
+                "sessionName": {
+                  "type": "STRING",
+                  "string": "SessionExcel"
+                },
+                "sessionTarget": "LOCAL"
+              }
+            },
+            {
+              "uid": "61835674-6c41-4edd-bd8d-5c8428b8bfb4",
+              "commandName": "logToFile",
+              "packageName": "LogToFile",
+              "disabled": false,
+              "attributes": [
+                {
+                  "name": "filePath",
+                  "value": {
+                    "type": "FILE",
+                    "expression": "file://$strLogPath$"
+                  }
+                },
+                {
+                  "name": "logContent",
+                  "value": {
+                    "type": "STRING",
+                    "string": " Excel sheet is created"
+                  }
+                },
+                {
+                  "name": "appendTimestamp",
+                  "value": {
+                    "type": "BOOLEAN",
+                    "boolean": true
+                  }
+                },
+                {
+                  "name": "logOption",
+                  "value": {
+                    "type": "STRING",
+                    "string": "APPEND_FILE"
+                  }
+                },
+                {
+                  "name": "encodingValue",
+                  "value": {
+                    "type": "STRING",
+                    "string": "ANSI"
+                  }
+                }
+              ]
+            }
+          ],
+          "disabled": false,
+          "attributes": [
+            {
+              "name": "title",
+              "value": {
+                "type": "STRING",
+                "string": "4 : Bot will create an excel file"
+              }
+            }
+          ]
+        },
+        {
+          "uid": "c4b62262-4a18-4dfd-9c74-87aca0abeedc",
+          "commandName": "step",
+          "packageName": "Step",
+          "children": [
+            {
+              "uid": "e83f577d-86c5-4ef2-a2b3-17edc3523f28",
+              "commandName": "loop.commands.start",
+              "packageName": "Loop",
+              "children": [
+                {
+                  "uid": "397c439c-ed51-4f19-a44b-ae74a6a03ef5",
+                  "commandName": "if",
+                  "packageName": "If",
+                  "children": [
+                    {
+                      "uid": "ee49c1d7-e891-48fb-9b81-0f257441e2e6",
+                      "commandName": "assignToNumber",
+                      "packageName": "Number",
+                      "disabled": false,
+                      "attributes": [
+                        {
+                          "name": "input",
+                          "value": {
+                            "type": "NUMBER",
+                            "expression": "$Counter$-1"
+                          }
+                        }
+                      ],
+                      "returnTo": {
+                        "type": "VARIABLE",
+                        "variableName": "datatableIndex"
+                      }
+                    },
+                    {
+                      "uid": "077abdff-e198-42ea-9631-5fd443e5da31",
+                      "commandName": "CreateWorksheet",
+                      "packageName": "Excel_MS",
+                      "disabled": false,
+                      "attributes": [
+                        {
+                          "name": "sheetOption",
+                          "value": {
+                            "type": "STRING",
+                            "string": "BYNAME"
+                          }
+                        },
+                        {
+                          "name": "sheetName",
+                          "value": {
+                            "type": "STRING",
+                            "expression": "$tbleCapturedData[0][$datatableIndex$]$"
+                          }
+                        },
+                        {
+                          "name": "session",
+                          "value": {
+                            "type": "SESSION",
+                            "sessionName": {
+                              "type": "STRING",
+                              "string": "SessionExcel"
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "uid": "76dbc619-1257-4dac-b4c1-f79da75da9d0",
+                      "commandName": "SwitchToSheet",
+                      "packageName": "Excel_MS",
+                      "disabled": false,
+                      "attributes": [
+                        {
+                          "name": "sheetOption",
+                          "value": {
+                            "type": "STRING",
+                            "string": "BYNAME"
+                          }
+                        },
+                        {
+                          "name": "sheetName",
+                          "value": {
+                            "type": "STRING",
+                            "expression": "$tbleCapturedData[0][$datatableIndex$]$"
+                          }
+                        },
+                        {
+                          "name": "session",
+                          "value": {
+                            "type": "SESSION",
+                            "sessionName": {
+                              "type": "STRING",
+                              "string": "SessionExcel"
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "uid": "4148f4d1-59a6-4865-85a2-f1660a158f80",
+                      "commandName": "logToFile",
+                      "packageName": "LogToFile",
+                      "disabled": false,
+                      "attributes": [
+                        {
+                          "name": "filePath",
+                          "value": {
+                            "type": "FILE",
+                            "expression": "file://$strLogPath$"
+                          }
+                        },
+                        {
+                          "name": "logContent",
+                          "value": {
+                            "type": "STRING",
+                            "expression": " $tbleCapturedData[0][$datatableIndex$]$ sheet has created"
+                          }
+                        },
+                        {
+                          "name": "appendTimestamp",
+                          "value": {
+                            "type": "BOOLEAN",
+                            "boolean": true
+                          }
+                        },
+                        {
+                          "name": "logOption",
+                          "value": {
+                            "type": "STRING",
+                            "string": "APPEND_FILE"
+                          }
+                        },
+                        {
+                          "name": "encodingValue",
+                          "value": {
+                            "type": "STRING",
+                            "string": "ANSI"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "uid": "6d21abd3-aa60-40be-a50a-5aff4f149954",
+                      "commandName": "SetCell",
+                      "packageName": "Excel_MS",
+                      "disabled": false,
+                      "attributes": [
+                        {
+                          "name": "cellOption",
+                          "value": {
+                            "type": "STRING",
+                            "string": "SPECIFIC_CELL"
+                          }
+                        },
+                        {
+                          "name": "cell",
+                          "value": {
+                            "type": "STRING",
+                            "string": "A1"
+                          }
+                        },
+                        {
+                          "name": "value",
+                          "value": {
+                            "type": "STRING",
+                            "string": "CustomerName"
+                          }
+                        },
+                        {
+                          "name": "session",
+                          "value": {
+                            "type": "SESSION",
+                            "sessionName": {
+                              "type": "STRING",
+                              "string": "SessionExcel"
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "uid": "1457dea3-5c81-40eb-ba70-b8b8d72d54f8",
+                      "commandName": "SetCell",
+                      "packageName": "Excel_MS",
+                      "disabled": false,
+                      "attributes": [
+                        {
+                          "name": "cellOption",
+                          "value": {
+                            "type": "STRING",
+                            "string": "SPECIFIC_CELL"
+                          }
+                        },
+                        {
+                          "name": "cell",
+                          "value": {
+                            "type": "STRING",
+                            "string": "B1"
+                          }
+                        },
+                        {
+                          "name": "value",
+                          "value": {
+                            "type": "STRING",
+                            "string": "Number of Locations"
+                          }
+                        },
+                        {
+                          "name": "session",
+                          "value": {
+                            "type": "SESSION",
+                            "sessionName": {
+                              "type": "STRING",
+                              "string": "SessionExcel"
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "uid": "6de29c17-2fc9-495f-b1b1-5a6ec3d1da67",
+                      "commandName": "assignToNumber",
+                      "packageName": "Number",
+                      "disabled": false,
+                      "attributes": [
+                        {
+                          "name": "input",
+                          "value": {
+                            "type": "NUMBER",
+                            "number": "2"
+                          }
+                        }
+                      ],
+                      "returnTo": {
+                        "type": "VARIABLE",
+                        "variableName": "CellCounter"
+                      }
+                    },
+                    {
+                      "uid": "bd6d11db-332e-4ce8-bde3-7452c3b7b592",
+                      "commandName": "logToFile",
+                      "packageName": "LogToFile",
+                      "disabled": false,
+                      "attributes": [
+                        {
+                          "name": "filePath",
+                          "value": {
+                            "type": "FILE",
+                            "expression": "file://$strLogPath$"
+                          }
+                        },
+                        {
+                          "name": "logContent",
+                          "value": {
+                            "type": "STRING",
+                            "expression": " Bot has started the loop for $tbleCapturedData[0][$datatableIndex$]$"
+                          }
+                        },
+                        {
+                          "name": "appendTimestamp",
+                          "value": {
+                            "type": "BOOLEAN",
+                            "boolean": true
+                          }
+                        },
+                        {
+                          "name": "logOption",
+                          "value": {
+                            "type": "STRING",
+                            "string": "APPEND_FILE"
+                          }
+                        },
+                        {
+                          "name": "encodingValue",
+                          "value": {
+                            "type": "STRING",
+                            "string": "ANSI"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "uid": "0c76353d-8182-4b36-adad-3926bdf64be5",
+                      "commandName": "loop.commands.start",
+                      "packageName": "Loop",
+                      "children": [
+                        {
+                          "uid": "ee26d155-6eb2-478b-80ab-17366b988ee7",
+                          "commandName": "if",
+                          "packageName": "If",
+                          "children": [
+                            {
+                              "uid": "b31765e7-bf7c-4742-a0d5-e79fa8cf65e1",
+                              "commandName": "SetCell",
+                              "packageName": "Excel_MS",
+                              "disabled": false,
+                              "attributes": [
+                                {
+                                  "name": "cellOption",
+                                  "value": {
+                                    "type": "STRING",
+                                    "string": "SPECIFIC_CELL"
+                                  }
+                                },
+                                {
+                                  "name": "cell",
+                                  "value": {
+                                    "type": "STRING",
+                                    "expression": "A$CellCounter.Number:toString$"
+                                  }
+                                },
+                                {
+                                  "name": "value",
+                                  "value": {
+                                    "type": "STRING",
+                                    "expression": "$recTableRow[0]$"
+                                  }
+                                },
+                                {
+                                  "name": "session",
+                                  "value": {
+                                    "type": "SESSION",
+                                    "sessionName": {
+                                      "type": "STRING",
+                                      "string": "SessionExcel"
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "uid": "b895463a-a082-49a4-bdc8-d19e4f75ff1f",
+                              "commandName": "SetCell",
+                              "packageName": "Excel_MS",
+                              "disabled": false,
+                              "attributes": [
+                                {
+                                  "name": "cellOption",
+                                  "value": {
+                                    "type": "STRING",
+                                    "string": "SPECIFIC_CELL"
+                                  }
+                                },
+                                {
+                                  "name": "cell",
+                                  "value": {
+                                    "type": "STRING",
+                                    "expression": "B$CellCounter.Number:toString$"
+                                  }
+                                },
+                                {
+                                  "name": "value",
+                                  "value": {
+                                    "type": "STRING",
+                                    "expression": "$recTableRow[$datatableIndex$]$"
+                                  }
+                                },
+                                {
+                                  "name": "session",
+                                  "value": {
+                                    "type": "SESSION",
+                                    "sessionName": {
+                                      "type": "STRING",
+                                      "string": "SessionExcel"
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "uid": "f1e707ac-b4a9-49b0-a580-da645dcd71c0",
+                              "commandName": "increment",
+                              "packageName": "Number",
+                              "disabled": false,
+                              "attributes": [
+                                {
+                                  "name": "source",
+                                  "value": {
+                                    "type": "NUMBER",
+                                    "expression": "$CellCounter$"
+                                  }
+                                },
+                                {
+                                  "name": "by",
+                                  "value": {
+                                    "type": "NUMBER",
+                                    "number": "1"
+                                  }
+                                }
+                              ],
+                              "returnTo": {
+                                "type": "VARIABLE",
+                                "variableName": "CellCounter"
+                              }
+                            }
+                          ],
+                          "branches": [],
+                          "disabled": false,
+                          "attributes": [
+                            {
+                              "attributes": [
+                                {
+                                  "name": "variable",
+                                  "value": {
+                                    "type": "STRING",
+                                    "expression": "$recTableRow[$datatableIndex$]$"
+                                  }
+                                },
+                                {
+                                  "name": "operator",
+                                  "value": {
+                                    "type": "STRING",
+                                    "string": "NEQ"
+                                  }
+                                },
+                                {
+                                  "name": "value",
+                                  "value": {
+                                    "type": "STRING",
+                                    "string": "0"
+                                  }
+                                },
+                                {
+                                  "name": "matchCase",
+                                  "value": {
+                                    "type": "BOOLEAN",
+                                    "boolean": true
+                                  }
+                                },
+                                {
+                                  "name": "isIgnoreCarriage",
+                                  "value": {
+                                    "type": "BOOLEAN",
+                                    "boolean": false
+                                  }
+                                }
+                              ],
+                              "operatorAttribute": {
+                                "operator": "AND",
+                                "attributes": [
+                                  {
+                                    "name": "variable",
+                                    "value": {
+                                      "type": "STRING",
+                                      "expression": "$recTableRow[0]$"
+                                    }
+                                  },
+                                  {
+                                    "name": "operator",
+                                    "value": {
+                                      "type": "STRING",
+                                      "string": "NEQ"
+                                    }
+                                  },
+                                  {
+                                    "name": "value",
+                                    "value": {
+                                      "type": "STRING",
+                                      "string": "CustomerName"
+                                    }
+                                  },
+                                  {
+                                    "name": "matchCase",
+                                    "value": {
+                                      "type": "BOOLEAN",
+                                      "boolean": true
+                                    }
+                                  },
+                                  {
+                                    "name": "isIgnoreCarriage",
+                                    "value": {
+                                      "type": "BOOLEAN",
+                                      "boolean": false
+                                    }
+                                  }
+                                ],
+                                "value": {
+                                  "type": "CONDITIONAL",
+                                  "conditionalName": "stringVariable",
+                                  "packageName": "String"
+                                }
+                              },
+                              "name": "condition",
+                              "value": {
+                                "type": "CONDITIONAL",
+                                "conditionalName": "stringVariable",
+                                "packageName": "String"
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "disabled": false,
+                      "attributes": [
+                        {
+                          "name": "loopType",
+                          "value": {
+                            "type": "STRING",
+                            "string": "ITERATOR"
+                          }
+                        },
+                        {
+                          "name": "iterator",
+                          "returnTo": {
+                            "type": "VARIABLE",
+                            "variableName": "recTableRow"
+                          },
+                          "attributes": [
+                            {
+                              "name": "sourceTable",
+                              "value": {
+                                "type": "VARIABLE",
+                                "variableName": "tbleCapturedData"
+                              }
+                            }
+                          ],
+                          "value": {
+                            "type": "ITERATOR",
+                            "iteratorName": "iteratorTableRow",
+                            "packageName": "DataTable"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "uid": "da06a05b-b03f-4b04-a8d5-f0eceb3b9b19",
+                      "commandName": "logToFile",
+                      "packageName": "LogToFile",
+                      "disabled": false,
+                      "attributes": [
+                        {
+                          "name": "filePath",
+                          "value": {
+                            "type": "FILE",
+                            "expression": "file://$strLogPath$"
+                          }
+                        },
+                        {
+                          "name": "logContent",
+                          "value": {
+                            "type": "STRING",
+                            "expression": " Bot has Finished the loop for $tbleCapturedData[0][$datatableIndex$]$"
+                          }
+                        },
+                        {
+                          "name": "appendTimestamp",
+                          "value": {
+                            "type": "BOOLEAN",
+                            "boolean": true
+                          }
+                        },
+                        {
+                          "name": "logOption",
+                          "value": {
+                            "type": "STRING",
+                            "string": "APPEND_FILE"
+                          }
+                        },
+                        {
+                          "name": "encodingValue",
+                          "value": {
+                            "type": "STRING",
+                            "string": "ANSI"
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "branches": [],
+                  "disabled": false,
+                  "attributes": [
+                    {
+                      "attributes": [
+                        {
+                          "name": "variable",
+                          "value": {
+                            "type": "NUMBER",
+                            "expression": "$Counter$"
+                          }
+                        },
+                        {
+                          "name": "operator",
+                          "value": {
+                            "type": "STRING",
+                            "string": "NEQ"
+                          }
+                        },
+                        {
+                          "name": "value",
+                          "value": {
+                            "type": "NUMBER",
+                            "number": "1"
+                          }
+                        }
+                      ],
+                      "name": "condition",
+                      "value": {
+                        "type": "CONDITIONAL",
+                        "conditionalName": "numberVariable",
+                        "packageName": "Number"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "disabled": false,
+              "attributes": [
+                {
+                  "name": "loopType",
+                  "value": {
+                    "type": "STRING",
+                    "string": "ITERATOR"
+                  }
+                },
+                {
+                  "name": "iterator",
+                  "returnTo": {
+                    "type": "VARIABLE",
+                    "variableName": "Counter"
+                  },
+                  "attributes": [
+                    {
+                      "name": "times",
+                      "value": {
+                        "type": "NUMBER",
+                        "expression": "$numTotalColumns$"
+                      }
+                    }
+                  ],
+                  "value": {
+                    "type": "ITERATOR",
+                    "iteratorName": "loop.iterators.times",
+                    "packageName": "Loop"
+                  }
+                }
+              ]
+            },
+            {
+              "uid": "afd07702-db4f-4e9f-adfc-5841f35ea000",
+              "commandName": "CloseSpreadsheet",
+              "packageName": "Excel_MS",
+              "disabled": false,
+              "attributes": [
+                {
+                  "name": "isSave",
+                  "value": {
+                    "type": "BOOLEAN",
+                    "boolean": true
+                  }
+                },
+                {
+                  "name": "session",
+                  "value": {
+                    "type": "SESSION",
+                    "sessionName": {
+                      "type": "STRING",
+                      "string": "SessionExcel"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "disabled": false,
+          "attributes": [
+            {
+              "name": "title",
+              "value": {
+                "type": "STRING",
+                "string": "5 : Bot implementation"
+              }
+            }
+          ]
+        }
+      ],
+      "branches": [
+        {
+          "uid": "1ce047c7-ae37-438c-b8cb-8cfd278b2686",
+          "commandName": "catch",
+          "packageName": "ErrorHandler",
+          "children": [
+            {
+              "uid": "6c2257ff-92e3-4332-af8e-e2c74be4e445",
+              "commandName": "logToFile",
+              "packageName": "LogToFile",
+              "disabled": false,
+              "attributes": [
+                {
+                  "name": "filePath",
+                  "value": {
+                    "type": "FILE",
+                    "expression": "file://$strLogPath$"
+                  }
+                },
+                {
+                  "name": "logContent",
+                  "value": {
+                    "type": "STRING",
+                    "expression": " Error Line number : $numErrorLineNumber.Number:toString$ and error description : $strErrorMessage$"
+                  }
+                },
+                {
+                  "name": "appendTimestamp",
+                  "value": {
+                    "type": "BOOLEAN",
+                    "boolean": false
+                  }
+                },
+                {
+                  "name": "logOption",
+                  "value": {
+                    "type": "STRING",
+                    "string": "APPEND_FILE"
+                  }
+                },
+                {
+                  "name": "encodingValue",
+                  "value": {
+                    "type": "STRING",
+                    "string": "ANSI"
+                  }
+                }
+              ]
+            }
+          ],
+          "disabled": false,
+          "attributes": [
+            {
+              "name": "exceptionType",
+              "value": {
+                "type": "EXCEPTION",
+                "exceptionName": "BotException",
+                "packageName": "ErrorHandler"
+              }
+            },
+            {
+              "name": "continueOnError",
+              "value": {
+                "type": "BOOLEAN",
+                "boolean": false
+              }
+            }
+          ],
+          "returns": {
+            "errorMessage": {
+              "type": "VARIABLE",
+              "variableName": "strErrorMessage"
+            },
+            "errorLineNumber": {
+              "type": "VARIABLE",
+              "variableName": "numErrorLineNumber"
+            }
+          }
+        }
+      ],
+      "disabled": false
+    }
+  ],
+  "variables": [
+    {
+      "type": "NUMBER",
+      "subtype": "UNDEFINED",
+      "readOnly": false,
+      "input": false,
+      "output": false,
+      "name": "SampleNumber"
+    },
+    {
+      "type": "STRING",
+      "subtype": "UNDEFINED",
+      "readOnly": false,
+      "input": false,
+      "output": false,
+      "name": "SampleString"
+    },
+    {
+      "name": "tbleCapturedData",
+      "description": "",
+      "type": "TABLE",
+      "readOnly": false,
+      "input": false,
+      "output": false,
+      "defaultValue": {
+        "type": "TABLE",
+        "table": {
+          "schema": [
+            {
+              "type": "STRING"
+            }
+          ],
+          "rows": [
+            {
+              "values": [
+                {
+                  "type": "STRING",
+                  "string": ""
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "numTotalColumns",
+      "description": "",
+      "type": "NUMBER",
+      "readOnly": false,
+      "input": false,
+      "output": false,
+      "defaultValue": {
+        "type": "NUMBER",
+        "number": "0"
+      }
+    },
+    {
+      "name": "Counter",
+      "description": "",
+      "type": "NUMBER",
+      "readOnly": false,
+      "input": false,
+      "output": false,
+      "defaultValue": {
+        "type": "NUMBER",
+        "number": "0"
+      }
+    },
+    {
+      "name": "datatableIndex",
+      "description": "",
+      "type": "NUMBER",
+      "readOnly": false,
+      "input": false,
+      "output": false,
+      "defaultValue": {
+        "type": "NUMBER",
+        "number": "0"
+      }
+    },
+    {
+      "name": "recTableRow",
+      "description": "",
+      "type": "RECORD",
+      "readOnly": false,
+      "input": false,
+      "output": false,
+      "defaultValue": {
+        "type": "RECORD",
+        "record": {
+          "schema": [],
+          "values": []
+        }
+      }
+    },
+    {
+      "name": "CellCounter",
+      "description": "",
+      "type": "NUMBER",
+      "readOnly": false,
+      "input": false,
+      "output": false,
+      "defaultValue": {
+        "type": "NUMBER",
+        "number": "0"
+      }
+    },
+    {
+      "name": "CounterForColumns",
+      "description": "",
+      "type": "NUMBER",
+      "readOnly": false,
+      "input": false,
+      "output": false,
+      "defaultValue": {
+        "type": "NUMBER",
+        "number": "0"
+      }
+    },
+    {
+      "name": "CustomerLocatorBrowser",
+      "description": "",
+      "type": "WINDOW",
+      "readOnly": false,
+      "input": false,
+      "output": false,
+      "defaultValue": {
+        "type": "WINDOW",
+        "window": {
+          "name": "botsdna.com/locator/",
+          "path": "",
+          "class": "Chrome_WidgetWin_",
+          "handle": "0",
+          "isChild": false,
+          "presetType": "NONE",
+          "windowType": "BROWSER_EDGE",
+          "browserTabUrl": "https://botsdna.com/locator/",
+          "browserTabOpenNewWindow": false,
+          "nameCaseInsensitive": true,
+          "virtualType": "VIRTUAL_TYPE_NONE",
+          "virtualPath": ""
+        }
+      }
+    },
+    {
+      "name": "strErrorMessage",
+      "description": "",
+      "type": "STRING",
+      "readOnly": false,
+      "input": false,
+      "output": false,
+      "defaultValue": {
+        "type": "STRING",
+        "string": ""
+      }
+    },
+    {
+      "name": "numErrorLineNumber",
+      "description": "",
+      "type": "NUMBER",
+      "readOnly": false,
+      "input": false,
+      "output": false,
+      "defaultValue": {
+        "type": "NUMBER",
+        "number": "0"
+      }
+    },
+    {
+      "name": "strLogPath",
+      "description": "",
+      "type": "STRING",
+      "readOnly": false,
+      "input": false,
+      "output": false,
+      "defaultValue": {
+        "type": "STRING",
+        "string": ""
+      }
+    }
+  ],
+  "packages": [
+    {
+      "name": "Browser",
+      "version": "3.13.1",
+      "settingsAttributes": []
+    },
+    {
+      "name": "Comment",
+      "version": "2.17.0",
+      "settingsAttributes": []
+    },
+    {
+      "name": "DataTable",
+      "version": "4.12.1",
+      "settingsAttributes": []
+    },
+    {
+      "name": "ErrorHandler",
+      "version": "2.12.1-20231117-175338",
+      "settingsAttributes": []
+    },
+    {
+      "name": "Excel_MS",
+      "version": "6.21.7",
+      "settingsAttributes": []
+    },
+    {
+      "name": "File",
+      "version": "6.11.0",
+      "settingsAttributes": []
+    },
+    {
+      "name": "If",
+      "version": "3.7.14-20231116-000453",
+      "settingsAttributes": []
+    },
+    {
+      "name": "LogToFile",
+      "version": "3.8.0",
+      "settingsAttributes": []
+    },
+    {
+      "name": "Loop",
+      "version": "3.8.1-20231117-175130",
+      "settingsAttributes": []
+    },
+    {
+      "name": "Number",
+      "version": "3.9.1",
+      "settingsAttributes": []
+    },
+    {
+      "name": "Recorder",
+      "version": "4.1.0-20250403-131547",
+      "settingsAttributes": []
+    },
+    {
+      "name": "Step",
+      "version": "2.7.0",
+      "settingsAttributes": []
+    },
+    {
+      "name": "String",
+      "version": "5.11.3",
+      "settingsAttributes": []
+    }
+  ],
+  "workItemTemplateName": null,
+  "properties": {
+    "botCodeVersion": "7",
+    "improvedNumberSupport": true,
+    "timeout": "0s",
+    "automationPriority": "PRIORITY_MEDIUM",
+    "runInChildWindow": false
+  }
+}
