@@ -1,0 +1,12 @@
+(9/5/2025 2:49:50 PM)  ************************************************************************************************************************************
+(9/5/2025 2:49:50 PM)  Bot has started
+(9/5/2025 2:50:13 PM)  Excel sheet is created
+(9/5/2025 2:50:14 PM)  Brazil sheet has created
+(9/5/2025 2:50:14 PM)  Bot has started the loop for Brazil
+(9/5/2025 2:50:18 PM)  Bot has Finished the loop for Brazil
+(9/5/2025 2:50:18 PM)  Canada sheet has created
+(9/5/2025 2:50:18 PM)  Bot has started the loop for Canada
+(9/5/2025 2:50:20 PM)  Bot has Finished the loop for Canada
+(9/5/2025 2:50:20 PM)  Egypt sheet has created
+(9/5/2025 2:50:21 PM)  Bot has started the loop for Egypt
+(9/5/2025 2:50:23 PM)  Bot has Finished the loop for Egypt
