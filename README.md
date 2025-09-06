@@ -41,11 +41,11 @@ customer-locator-bot/
 
 |- README.md
 
-|- CustomerLocator_Main.json       # Bot definition
+|- Customer-Locator-Bot.json       # Bot definition
 
 |- data.xlsx                       # Sample Excel file
 
-|- execution.log                   # Sample log file
+|- CustomerLocator_LogFile.txt     # Sample log file
 
 |- customer_locator_workflow.png   # Workflow screenshot
 
